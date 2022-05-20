@@ -5,6 +5,9 @@ const colors = require('colors')
 const connectDB = require('./config/db')
 // const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
+const cors = require('cors');
+
+
 
 connectDB();
 
@@ -12,6 +15,7 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.use(cors())
 // mongoose.connect('mongodb://localhost:27017',
 //   {
 //     useNewUrlParser: true,
